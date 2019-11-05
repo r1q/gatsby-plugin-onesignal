@@ -1,7 +1,7 @@
 {
   "name": "@r1q/gatsby-plugin-onesignal",
   "description": "Gatsby plugin to add onesignal onto a site",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {
     "@babel/runtime": "^7.0.0"
   },

@@ -1,15 +1,11 @@
-import React from "react"
+import React from "react";
 
 exports.onRenderBody = (
   { setHeadComponents, setPostBodyComponents },
   pluginOptions
 ) => {
-  if (process.env.NODE_ENV !== `production`) {
-    return null
-  }
-
   if (!pluginOptions.appid) {
-    throw new Error("Onesignal appid must be set")
+    throw new Error("Onesignal appid must be set");
   }
 
   setHeadComponents([
@@ -17,12 +13,12 @@ exports.onRenderBody = (
       rel="preconnect dns-prefetch"
       key="preconnect-onesignal"
       href="https://cdn.onesignal.com"
-    />,
-  ])
+    />
+  ]);
 
   const setComponents = pluginOptions.head
     ? setHeadComponents
-    : setPostBodyComponents
+    : setPostBodyComponents;
 
   return setComponents([
     <script
@@ -40,8 +36,8 @@ exports.onRenderBody = (
                  appId: "${pluginOptions.appid}",
                  });
              });
-         `,
+         `
       }}
-    />,
-  ])
-}
+    />
+  ]);
+};
